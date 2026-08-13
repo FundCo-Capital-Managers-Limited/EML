@@ -11,8 +11,9 @@ export default function Projects() {
   return (
     <>
       <PageHero
-        title="Our Projects"
-        subtitle="Support the development of clean energy infrastructure that benefits both the environment and local communities."
+        breadcrumb="Our Portfolio"
+        title="Deliver renewable micro grids that transform lives and support local economies."
+        subtitle="Our projects focus on delivering reliable, renewable, and resilient energy systems that transform lives, support local economies, and protect the environment. Explore our diverse portfolio to see how we are making a difference."
         image="/uploads/2024/10/Image-7.png"
       />
 

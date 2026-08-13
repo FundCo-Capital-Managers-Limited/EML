@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import GrmForm from "@/components/GrmForm";
+import FaqPreview from "@/components/FaqPreview";
 
 export const metadata: Metadata = { title: "Grievance Redress Mechanism | Electrify MicroGrid" };
 
@@ -31,6 +32,10 @@ export default function GRM() {
 
         <GrmForm />
       </section>
+
+      <div className="bg-surface border-y border-border">
+        <FaqPreview />
+      </div>
     </>
   );
 }

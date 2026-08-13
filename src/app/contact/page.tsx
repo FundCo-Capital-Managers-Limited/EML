@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
+import FaqPreview from "@/components/FaqPreview";
 
 export const metadata: Metadata = { title: "Contact Us | Electrify MicroGrid" };
 
@@ -45,6 +46,10 @@ export default function Contact() {
           <ContactForm />
         </div>
       </section>
+
+      <div className="bg-surface border-y border-border">
+        <FaqPreview />
+      </div>
     </>
   );
 }
