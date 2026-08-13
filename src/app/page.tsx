@@ -1,69 +1,268 @@
 import Image from "next/image";
+import Link from "next/link";
+import JoinCta from "@/components/JoinCta";
+import { PROJECTS } from "@/lib/projects";
+
+const SERVICES = [
+  {
+    title: "Micro & Mini Grid Development",
+    text: "Developing customized microgrid solutions tailored to specific energy needs, from rural communities to off-grid businesses.",
+  },
+  {
+    title: "Project Finance",
+    text: "End-to-end financial solutions, offering investment strategies and financing plans that make sustainable energy development achievable.",
+  },
+  {
+    title: "Operations & Maintenance",
+    text: "Ongoing operations and maintenance services, ensuring microgrid systems run optimally with minimal downtime.",
+  },
+];
+
+const WHY_US = [
+  {
+    title: "Expertise in Renewable Energy",
+    text: "Our team comprises industry experts with years of experience in renewable energy and microgrid solutions.",
+  },
+  {
+    title: "Access to Finance",
+    text: "We connect projects to developmental financial institutions, government bodies, and investors for sustainable funding.",
+  },
+  {
+    title: "Commitment to Sustainability",
+    text: "Every project we deliver is designed to reduce carbon emissions and conserve resources for a greener future.",
+  },
+  {
+    title: "Community Impact",
+    text: "We involve communities in every project phase, ensuring lasting, locally-driven impact.",
+  },
+];
+
+const STATES = ["Jigawa", "Cross River", "Katsina", "Ondo", "Plateau", "Kogi", "Kano"];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-navy to-dark text-white">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/uploads/2024/10/HERO-1-1024x479.png"
+          alt=""
+          fill
           priority
+          className="object-cover opacity-90"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/50 via-navy/45 to-dark/60" />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-28 md:py-36">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-4">
+            Reliable, Renewable, and Resilient Energy Solutions
           </p>
+          <h1 className="max-w-2xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+            Empowering Communities with Sustainable Microgrids
+          </h1>
+          <div className="mt-10">
+            <Link
+              href="/contact"
+              className="inline-block rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-black/10 hover:bg-accent hover:text-dark hover:-translate-y-0.5 transition-all"
+            >
+              Get Started
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-4">
+          About Us
+        </h2>
+        <p className="mx-auto max-w-2xl text-text-secondary leading-relaxed mb-6">
+          Electrify MicroGrid is dedicated to transforming energy access for
+          communities. Our innovative micro-grid solutions offer
+          sustainable, reliable, and cost-effective energy systems tailored
+          to the unique needs of under-served and off-grid areas.
+        </p>
+        <Link
+          href="/about"
+          className="inline-block rounded-full bg-dark px-6 py-3 text-sm font-semibold text-white hover:bg-brand transition-colors"
+        >
+          Learn More
+        </Link>
+      </section>
+
+      <section className="bg-surface border-y border-border">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-4">
+              Our Services
+            </h2>
+            <p className="mx-auto max-w-2xl text-text-secondary">
+              Support the development of clean energy infrastructure that
+              benefits both the environment and local communities.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {SERVICES.map((s) => (
+              <div
+                key={s.title}
+                className="rounded-2xl border border-border bg-white p-6 sm:p-7 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <h3 className="text-lg font-semibold text-brand mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {s.text}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/service"
+              className="inline-block rounded-full border border-navy px-6 py-3 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
+            >
+              Explore Services
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-12 text-center">
+          Why Choose Us
+        </h2>
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {WHY_US.map((w) => (
+            <div
+              key={w.title}
+              className="rounded-2xl border border-border bg-white p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <h3 className="text-sm font-semibold text-brand mb-2">
+                {w.title}
+              </h3>
+              <p className="text-xs text-text-secondary leading-relaxed">
+                {w.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-dark text-white">
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              Our Projects
+            </h2>
+            <p className="mx-auto max-w-2xl text-white/75">
+              Support the development of clean energy infrastructure that
+              benefits both the environment and local communities.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {PROJECTS.slice(0, 3).map((p) => (
+              <Link
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                className="group rounded-2xl bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
+              >
+                <div className="relative h-40 w-full overflow-hidden">
+                  <Image
+                    src={p.image || "/uploads/2024/10/panel.jpg"}
+                    alt={p.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-semibold mb-2">{p.title}</h3>
+                  <p className="text-sm text-white/70 leading-relaxed">
+                    {p.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/projects"
+              className="inline-block rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-accent hover:text-dark transition-colors"
+            >
+              View More
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-10">
+          States We Operate In
+        </h2>
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+          {STATES.map((s) => (
+            <span
+              key={s}
+              className="rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-text shadow-sm hover:border-brand hover:text-brand transition-colors"
+            >
+              {s}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-surface border-y border-border">
+        <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20 text-center">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-text-secondary mb-10">
+            People We Work With
+          </h2>
+          <div className="flex justify-center">
+            <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+              <Image
+                src="/uploads/2024/10/KPMG-LOGO.svg"
+                alt="KPMG"
+                width={140}
+                height={60}
+                className="h-12 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-6 py-16 sm:py-20 text-center">
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-4">
+          Frequently Asked Questions
+        </h2>
+        <div className="text-left mx-auto max-w-2xl mt-10 space-y-6">
+          <div className="rounded-xl border border-border bg-white p-6">
+            <h3 className="font-semibold text-text mb-2">
+              What is a MiniGrid?
+            </h3>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              A MiniGrid is a localized power system serving a small
+              community or an area not connected to the main electrical
+              grid, often using renewable energy sources like solar, wind,
+              or hydro.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-white p-6">
+            <h3 className="font-semibold text-text mb-2">
+              What are the key steps in MiniGrid design?
+            </h3>
+            <p className="text-sm text-text-secondary leading-relaxed">
+              Define geographic scope, assess commercial viability of a
+              community based on predetermined criteria, assess available
+              resources, size the system, select the configuration, and
+              design the distribution system.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/faqs"
+          className="inline-block mt-8 rounded-full border border-navy px-6 py-3 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
+        >
+          View More
+        </Link>
+      </section>
+
+      <JoinCta />
+    </>
   );
 }

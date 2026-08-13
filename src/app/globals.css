@@ -2,25 +2,35 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2a24;
+
+  --color-brand: #30a349;
+  --color-brand-dark: #00532c;
+  --color-accent: #fda822;
+  --color-navy: #192d41;
+  --color-text: #1f2a24;
+  --color-text-secondary: #566058;
+  --color-surface: #f5f9fc;
+  --color-border: #e5eae7;
+  --color-dark: #14231a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand: var(--color-brand);
+  --color-brand-dark: var(--color-brand-dark);
+  --color-accent: var(--color-accent);
+  --color-navy: var(--color-navy);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-dark: var(--color-dark);
+  --font-sans: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
