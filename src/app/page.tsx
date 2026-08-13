@@ -1,7 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import JoinCta from "@/components/JoinCta";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
+import OperationsMap from "@/components/OperationsMap";
 import { PROJECTS } from "@/lib/projects";
+
+const PARTNERS = [
+  { name: "KPMG", src: "/uploads/2024/10/KPMG-LOGO.svg" },
+  { name: "FundCo Capital Managers", src: "/uploads/2024/10/Stanbic.svg" },
+  { name: "UBA", src: "/uploads/2024/10/UBA.svg" },
+  { name: "InfraCredit", src: "/uploads/2024/10/Ajayi.svg" },
+  { name: "Clean Energy Fund", src: "/uploads/2024/10/Capital-1.svg" },
+];
 
 const SERVICES = [
   {
@@ -36,8 +46,6 @@ const WHY_US = [
     text: "We involve communities in every project phase, ensuring lasting, locally-driven impact.",
   },
 ];
-
-const STATES = ["Jigawa", "Cross River", "Katsina", "Ondo", "Plateau", "Kogi", "Kano"];
 
 export default function Home() {
   return (
@@ -156,30 +164,7 @@ export default function Home() {
               benefits both the environment and local communities.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {PROJECTS.slice(0, 3).map((p) => (
-              <Link
-                key={p.slug}
-                href={`/projects/${p.slug}`}
-                className="group rounded-2xl bg-white/5 overflow-hidden hover:bg-white/10 transition-colors"
-              >
-                <div className="relative h-40 w-full overflow-hidden">
-                  <Image
-                    src={p.image || "/uploads/2024/10/panel.jpg"}
-                    alt={p.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold mb-2">{p.title}</h3>
-                  <p className="text-sm text-white/70 leading-relaxed">
-                    {p.excerpt}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ProjectsCarousel projects={PROJECTS} />
           <div className="text-center mt-10">
             <Link
               href="/projects"
@@ -191,37 +176,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-20 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold text-navy mb-10">
-          States We Operate In
-        </h2>
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-          {STATES.map((s) => (
-            <span
-              key={s}
-              className="rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-text shadow-sm hover:border-brand hover:text-brand transition-colors"
-            >
-              {s}
-            </span>
-          ))}
-        </div>
-      </section>
+      <OperationsMap />
 
       <section className="bg-surface border-y border-border">
         <div className="mx-auto max-w-5xl px-6 py-16 sm:py-20 text-center">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-text-secondary mb-10">
             People We Work With
           </h2>
-          <div className="flex justify-center">
-            <div className="rounded-2xl border border-border bg-white p-6 shadow-sm">
-              <Image
-                src="/uploads/2024/10/KPMG-LOGO.svg"
-                alt="KPMG"
-                width={140}
-                height={60}
-                className="h-12 w-auto"
-              />
-            </div>
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
+            {PARTNERS.map((p) => (
+              <div
+                key={p.name}
+                className="rounded-2xl border border-border bg-white px-6 py-5 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <Image
+                  src={p.src}
+                  alt={p.name}
+                  width={140}
+                  height={60}
+                  className="h-9 sm:h-10 w-auto"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
