@@ -112,8 +112,8 @@ export default function TermsAndConditions() {
         <P>
           If you have any questions about these Terms and Conditions, You
           can contact us by email at{" "}
-          <a href="mailto:Info@electrifymicrogrid.com" className="text-brand">
-            Info@electrifymicrogrid.com
+          <a href="mailto:Info@electrifymicrogrid.ng" className="text-brand">
+            Info@electrifymicrogrid.ng
           </a>
         </P>
       </section>

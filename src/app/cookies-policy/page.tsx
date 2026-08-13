@@ -70,8 +70,8 @@ export default function CookiesPolicy() {
         <P>
           If you have any questions about this Cookies Policy, You can
           contact us by email at{" "}
-          <a href="mailto:Info@electrifymicrogrid.com" className="text-brand">
-            Info@electrifymicrogrid.com
+          <a href="mailto:Info@electrifymicrogrid.ng" className="text-brand">
+            Info@electrifymicrogrid.ng
           </a>
         </P>
       </section>

@@ -94,8 +94,8 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:Info@electrifymicrogrid.com" className="hover:text-white transition-colors">
-                Info@electrifymicrogrid.com
+              <a href="mailto:Info@electrifymicrogrid.ng" className="hover:text-white transition-colors">
+                Info@electrifymicrogrid.ng
               </a>
             </li>
           </ul>

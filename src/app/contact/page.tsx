@@ -23,8 +23,8 @@ export default function Contact() {
 
           <h2 className="text-lg font-semibold text-brand mb-2">Email</h2>
           <p className="text-text-secondary mb-6">
-            <a href="mailto:Info@electrifymicrogrid.com" className="hover:text-brand">
-              Info@electrifymicrogrid.com
+            <a href="mailto:Info@electrifymicrogrid.ng" className="hover:text-brand">
+              Info@electrifymicrogrid.ng
             </a>
           </p>
 
